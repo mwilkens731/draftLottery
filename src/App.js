@@ -9,7 +9,8 @@ const lastYearColumns = [
     Header: 'Last Years\'s Results',
     columns: [
       {
-        Header: '#',
+        Header: 'Standings',
+        id: 'finalStanding',
         accessor: 'finalStanding'
       },
       {
@@ -137,7 +138,7 @@ class App extends Component {
         </div>
         <div className='row'>
           <div className='col-xl-4'>
-            <ReactTable className='text-center -striped -highlight' data={LastYear} columns={lastYearColumns} defaultPageSize={LastYear.length} showPagination={false} />
+            <ReactTable className='text-center -striped -highlight' defaultSorted={[{id: 'finalStanding', desc: true}]} data={LastYear} columns={lastYearColumns} defaultPageSize={LastYear.length} showPagination={false} />
           </div>
           <div className='col-xl-4'>
             <ReactTable className='text-center -striped -highlight' data={this.state.lotteryResults} columns={resultColummns} defaultPageSize={LastYear.length} showPagination={false} />
