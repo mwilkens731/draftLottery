@@ -11,7 +11,7 @@
     "react-table": "6.7.6"
   },
   "devDependencies": {
-        "gh-pages": "^1.1.0" 
+        "gh-pages": "^1.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -22,4 +22,3 @@
     "deploy": "gh-pages -d build"
   }
 }
-git config --global \credential.https://mwilkens731.github.io/draftLottery.mwilkens731 \mwilkens731
