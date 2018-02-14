@@ -152,6 +152,7 @@ class App extends Component {
             <button type='button' className='btn btn-primary' onClick={this.draft}>Draft!</button>
           </div>
         </div>
+        <br />
         <div className='row'>
           <div className='col-xl-12 text-center'>
             {this.state.previousPick.teamName &&
