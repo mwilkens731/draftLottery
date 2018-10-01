@@ -1,51 +1,51 @@
 const lastYear = [
   {
-    teamName: 'Dubya Tee Dubya',
+    teamName: 'Springfield Isotopes',
     finalStanding: 1,
     balls: 7
   },
   {
-    teamName: 'Springfield Isotopes',
+    teamName: 'Dubya Tee Dubya',
     finalStanding: 2,
     balls: 8
   },
   {
-    teamName: 'Pork Chop Sandwiches',
+    teamName: 'Juan Uribe Swallows',
     finalStanding: 3,
     balls: 11
   },
   {
-    teamName: 'Juan Uribe Swallows',
+    teamName: 'Pork Chop Sandwiches',
     finalStanding: 4,
     balls: 17
   },
   {
-    teamName: 'Angry McShrinkynuts',
+    teamName: 'Anal Pollocks',
     finalStanding: 5,
     balls: 28
   },
   {
-    teamName: 'Sexy Gingers',
+    teamName:'MojoJojo' ,
     finalStanding: 6,
     balls: 43
   },
   {
-    teamName: 'Slump Buster',
+    teamName: 'Chris McElroy\'s Team',
     finalStanding: 7,
     balls: 63
   },
   {
-    teamName: 'Flying Vasta Bros.',
+    teamName: 'Slump Buster',
     finalStanding: 8,
     balls: 88
   },
   {
-    teamName: 'Czech Yourself',
+    teamName: 'Flying Vasta Bros.',
     finalStanding: 9,
     balls: 119
   },
   {
-    teamName: 'ur killin me smalls',
+    teamName: 'Angry McShrinkynuts',
     finalStanding: 10,
     balls: 156
   },
@@ -55,7 +55,7 @@ const lastYear = [
     balls: 199
   },
   {
-    teamName: 'Chris McElroy\'s Team',
+    teamName: 'ur killin me smalls',
     finalStanding: 12,
     balls: 250
   }
