@@ -30,7 +30,7 @@ const lastYear = [
     balls: 43
   },
   {
-    teamName: 'Chris McElroy\'s Team',
+    teamName: 'Shenanigans',
     finalStanding: 7,
     balls: 63
   },
