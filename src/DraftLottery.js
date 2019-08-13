@@ -132,13 +132,13 @@ class DraftLottery extends Component {
     return (
       <div>
         <div className='row'>
-          <div className='col-4'>
+          <div className='col-12 col-md-4'>
             <ReactTable className='text-center -striped -highlight' defaultSorted={[{id: 'finalStanding', desc: true}]} data={this.props.lotteryInfo} columns={lastYearColumns} defaultPageSize={this.props.lotteryInfo.length} showPagination={false} />
           </div>
-          <div className='col-4'>
+          <div className='col-12 col-md-4'>
             <ReactTable className='text-center -striped -highlight' data={this.state.lotteryResults} columns={resultColummns} defaultPageSize={this.props.lotteryInfo.length} showPagination={false} />
           </div>
-          <div className='col-4'>
+          <div className='col-12 col-md-4'>
             <ReactTable className='text-center -striped -highlight' defaultSorted={[{id: 'chance', desc: true}]} data={this.state.teamsRemaining} columns={remainingTeams} defaultPageSize={this.state.teamsRemaining.length} showPagination={false} />
           </div>
         </div>
