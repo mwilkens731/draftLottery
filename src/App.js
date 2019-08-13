@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import 'react-table/react-table.css';
 import DraftLottery from './DraftLottery';
 import TeamInfoForm from './TeamInfoForm';
 

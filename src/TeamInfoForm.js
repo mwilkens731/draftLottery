@@ -44,7 +44,7 @@ class TeamInfoForm extends Component {
     };
   }
 
-  componentDidUpdate(){
+  componentDidMount(){
     this.handleChange({value: this.state.numTeams});
   }
 
@@ -56,11 +56,12 @@ class TeamInfoForm extends Component {
     if (e.value !== this.state.numTeams || this.state.teamInfo.length === 0){
       let teamInfo = [];
       for (let i = 0; i < e.value; i++){
-        teamInfo.push({
+        let thisTeam = {
+          balls: defaultBallsByStanding[e.value - (i+1)],
           teamName: `Team ${i+1}`,
-          finalStanding: i + 1,
-          balls: defaultBallsByStanding[i]
-        });
+          finalStanding: i + 1
+        };
+        teamInfo.push(thisTeam);
       }
       this.setState({
         numTeams: e.value,
@@ -71,7 +72,7 @@ class TeamInfoForm extends Component {
 
   handleTeamNameChange(e) {
     let teamInfo = this.clone(this.state.teamInfo);
-    teamInfo[e.target.id.substr(0,1)].teamName = e.target.value;
+    teamInfo[e.target.getAttribute('data-row')].teamName = e.target.value;
     this.setState({
       teamInfo: teamInfo
     });
@@ -79,7 +80,7 @@ class TeamInfoForm extends Component {
 
   handleBallsChange(e) {
     let teamInfo = this.clone(this.state.teamInfo);
-    teamInfo[e.target.id.substr(0,1)].balls = e.target.value;
+    teamInfo[e.target.getAttribute('data-row')].balls = parseInt(e.target.value);
     this.setState({
       teamInfo: teamInfo
     });
@@ -91,8 +92,8 @@ class TeamInfoForm extends Component {
       jsx.push(
         <tr>
             <th scope='row'>{this.state.teamInfo[i].finalStanding}</th>
-            <td><input id={`${i}Name`} type='text' value={this.state.teamInfo[i].teamName} onChange={this.handleTeamNameChange}/></td>
-            <td><input id={`${i}Balls`} type='text' value={this.state.teamInfo[i].balls} onChange={this.handleBallsChange}/></td>
+            <td><input data-row={i} type='text' value={this.state.teamInfo[i].teamName} onChange={this.handleTeamNameChange}/></td>
+            <td><input data-row={i} type='number' value={this.state.teamInfo[i].balls} onChange={this.handleBallsChange}/></td>
         </tr>
       );
     }
@@ -107,11 +108,12 @@ class TeamInfoForm extends Component {
     return (
       <div>
         <div className='row pb-4'>
-          <h4 className='col-12 text-center'>Enter Team Information</h4>
+          <h5 className='col-12 text-center'>Enter last year&apos;s standings, tweak lottery settings, and click Submit</h5>
         </div>
         <div className='row pb-4'>
           <label htmlFor='numTeamsDropdown' className='col-2 offset-3'>Number of Teams:</label>
-          <ReactSelect name='numTeamsDropdown' className='col-2' options={options} selected={this.state.numTeams} onChange={this.handleChange} />
+          <ReactSelect name='numTeamsDropdown' className='col-2' options={options} selected={this.state.numTeams} defaultValue={{label: 12, value: 12}} onChange={this.handleChange} />
+          <div className='col-2'><button type='button' className='btn btn-primary float-right' onClick={this.submitTeamInfo}>Submit</button></div>
         </div>
         <div className='row'>
           <table className='table col-6 offset-3'>
@@ -124,9 +126,6 @@ class TeamInfoForm extends Component {
             </thead>
             {this.populateTable()}
           </table>
-        </div>
-        <div className='row'>
-          <div className='col-2 offset-2'><button type='button' className='btn btn-primary' onClick={this.submitTeamInfo}>Submit</button></div>
         </div>
       </div>
     );

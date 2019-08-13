@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactTable from 'react-table';
 import PropTypes from 'prop-types';
+import 'react-table/react-table.css';
 
 const lastYearColumns = [
   {
@@ -71,16 +72,16 @@ class DraftLottery extends Component {
     this.state = {
       lotteryResults: [],
       previousPick: {},
-      lottery: [],
-      teamsRemaining: []
+      lottery: this.populateLottery(props.lotteryInfo),
+      teamsRemaining: this.populatePercentages(props.lotteryInfo, this.calculateTotalBalls(props.lotteryInfo))
     };
   }
 
-  componentDidMount() {
-    console.log('in', this.props.lotteryInfo);
+  componentDidUpdate(nextProps) {
+    console.log('in', nextProps.lotteryInfo);
     this.setState({
-      lottery: this.populateLottery(this.props.lotteryInfo),
-      teamsRemaining: this.populatePercentages(this.props.lotteryInfo, this.calculateTotalBalls(this.props.lotteryInfo))
+      lottery: this.populateLottery(nextProps.lotteryInfo),
+      teamsRemaining: this.populatePercentages(nextProps.lotteryInfo, this.calculateTotalBalls(nextProps.lotteryInfo))
     });
   }
 
@@ -91,6 +92,7 @@ class DraftLottery extends Component {
         lottery.push(team);
       }
     });
+    console.log('returning lottery', lottery);
     return lottery;
   }
 
@@ -108,6 +110,7 @@ class DraftLottery extends Component {
     teamsRemaining.forEach((team) => {
       totalBalls += team.balls;
     });
+    console.log('returning', totalBalls);
     return totalBalls;
   }
 
