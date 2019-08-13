@@ -113,7 +113,7 @@ class TeamInfoForm extends Component {
         <div className='row pb-4'>
           <label htmlFor='numTeamsDropdown' className='col-4 col-md-2 offset-md-3'>Number of Teams:</label>
           <ReactSelect name='numTeamsDropdown' className='col-4 col-md-2' options={options} selected={this.state.numTeams} defaultValue={{label: 12, value: 12}} onChange={this.handleChange} />
-          <div className='col-4 col-m2-2'><button type='button' className='btn btn-primary float-right' onClick={this.submitTeamInfo}>Submit</button></div>
+          <div className='col-4 col-md-2'><button type='button' className='btn btn-primary float-right' onClick={this.submitTeamInfo}>Submit</button></div>
         </div>
         <div className='row'>
           <table className='table col-12 col-md-6 offset-md-3'>
