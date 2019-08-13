@@ -77,13 +77,6 @@ class DraftLottery extends Component {
     };
   }
 
-  componentDidUpdate(nextProps) {
-    console.log('in', nextProps.lotteryInfo);
-    this.setState({
-      lottery: this.populateLottery(nextProps.lotteryInfo),
-      teamsRemaining: this.populatePercentages(nextProps.lotteryInfo, this.calculateTotalBalls(nextProps.lotteryInfo))
-    });
-  }
 
   populateLottery (teamsRemaining) {
     let lottery = [];
@@ -92,7 +85,6 @@ class DraftLottery extends Component {
         lottery.push(team);
       }
     });
-    console.log('returning lottery', lottery);
     return lottery;
   }
 
@@ -110,7 +102,6 @@ class DraftLottery extends Component {
     teamsRemaining.forEach((team) => {
       totalBalls += team.balls;
     });
-    console.log('returning', totalBalls);
     return totalBalls;
   }
 
