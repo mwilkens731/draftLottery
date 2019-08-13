@@ -1,6 +1,15 @@
 {
-  "main.css": "static/css/main.525278bd.css",
-  "main.css.map": "static/css/main.525278bd.css.map",
-  "main.js": "static/js/main.7e09587d.js",
-  "main.js.map": "static/js/main.7e09587d.js.map"
+  "main.css": "/draftLottery/static/css/main.0f864bf1.chunk.css",
+  "main.js": "/draftLottery/static/js/main.b43ca2a6.chunk.js",
+  "main.js.map": "/draftLottery/static/js/main.b43ca2a6.chunk.js.map",
+  "runtime~main.js": "/draftLottery/static/js/runtime~main.b182df57.js",
+  "runtime~main.js.map": "/draftLottery/static/js/runtime~main.b182df57.js.map",
+  "static/css/2.bed5c86d.chunk.css": "/draftLottery/static/css/2.bed5c86d.chunk.css",
+  "static/js/2.7ac7a8c5.chunk.js": "/draftLottery/static/js/2.7ac7a8c5.chunk.js",
+  "static/js/2.7ac7a8c5.chunk.js.map": "/draftLottery/static/js/2.7ac7a8c5.chunk.js.map",
+  "index.html": "/draftLottery/index.html",
+  "precache-manifest.8f852c3bf0aece463f3f0b75d02355fe.js": "/draftLottery/precache-manifest.8f852c3bf0aece463f3f0b75d02355fe.js",
+  "service-worker.js": "/draftLottery/service-worker.js",
+  "static/css/2.bed5c86d.chunk.css.map": "/draftLottery/static/css/2.bed5c86d.chunk.css.map",
+  "static/css/main.0f864bf1.chunk.css.map": "/draftLottery/static/css/main.0f864bf1.chunk.css.map"
 }
