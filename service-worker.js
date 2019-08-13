@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/draftLottery/precache-manifest.e23381eec050576afd2202f49dc7ccbd.js"
+  "/draftLottery/precache-manifest.568554d9b5f903678ea3764c8e13b6e0.js"
 );
 
 workbox.clientsClaim();
