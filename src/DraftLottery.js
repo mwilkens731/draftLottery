@@ -69,6 +69,7 @@ class DraftLottery extends Component {
     this.populatePercentages = this.populatePercentages.bind(this);
     this.calculateTotalBalls = this.calculateTotalBalls.bind(this);
     this.draft = this.draft.bind(this);
+    this.reset = this.reset.bind(this);
     this.state = {
       lotteryResults: [],
       previousPick: {},
@@ -128,6 +129,17 @@ class DraftLottery extends Component {
     }
   }
 
+  reset () {
+    if(window.confirm('Are you sure?')) {
+      this.setState({
+        lotteryResults: [],
+        previousPick: {},
+        lottery: this.populateLottery(this.props.lotteryInfo),
+        teamsRemaining: this.populatePercentages(this.props.lotteryInfo, this.calculateTotalBalls(this.props.lotteryInfo))
+      });
+    }
+  }
+
   render() {
     return (
       <div>
@@ -145,7 +157,8 @@ class DraftLottery extends Component {
         <br /><br />
         <div className='row'>
           <div className='col-12 text-center'>
-            <button type='button' className='btn btn-primary' onClick={this.draft}>Draft!</button>
+            <button type='button' className='btn btn-primary' onClick={this.draft}>Draft!</button>&nbsp;&nbsp;
+            <button type='button' className='btn btn-secondary' onClick={this.reset}>Reset</button>
           </div>
         </div>
         <br />
